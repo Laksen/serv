@@ -1,0 +1,186 @@
+library(yosys_cells) {
+	cell(_74377_Individual) {
+		area: 0.125;
+		ff(IQ, IQN) {
+			clocked_on: "CLK";
+			next_state: "D";
+		}
+		pin(D) { direction: input; }
+		pin(CLK) { direction: input; clock: true; }
+		pin(Q) { direction: output; function: "IQ"; }
+	}
+	cell(_74125) {
+		area: 0.25;
+		pin(A) {direction: input; }
+		pin(Y) {direction: output; function: "A"; }
+	}
+	cell(_7404) {
+		area: 0.1666;
+		pin(A) {direction: input; }
+		pin(Y) {direction: output;function: "A'"; }
+	}
+	cell(_7408) {
+		area: 0.1666;
+		pin(A) {direction: input; }
+		pin(B) {direction: input; }
+		pin(Y) {direction: output;function: "A*B"; }
+	}
+	cell(_7400) {
+		area: 0.25;
+		pin(A) {direction: input; }
+		pin(B) {direction: input; }
+		pin(Y) {direction: output;function: "(A*B)'"; }
+	}
+	cell(_7402) {
+		area: 0.25;
+		pin(A) {direction: input; }
+		pin(B) {direction: input; }
+		pin(Y) {direction: output;function: "(A+B)'"; }
+	}
+	cell(_7432) {
+		area: 0.25;
+		pin(A) {direction: input; }
+		pin(B) {direction: input; }
+		pin(Y) {direction: output;function: "A+B"; }
+	}
+	cell(_7410) {
+		area: 0.33;
+		pin(A) {direction: input; }
+		pin(B) {direction: input; }
+		pin(C) {direction: input; }
+		pin(Y) {direction: output; function: "(A*B*C)'"; }
+	}
+	cell(_7411) {
+		area: 0.33;
+		pin(A) {direction: input; }
+		pin(B) {direction: input; }
+		pin(C) {direction: input; }
+		pin(Y) {direction: output; function: "A*B*C"; }
+	}
+	cell(_744075) {
+		area: 0.33;
+		pin(A) {direction: input; }
+		pin(B) {direction: input; }
+		pin(C) {direction: input; }
+		pin(Y) {direction: output; function: "A+B+C"; }
+	}
+	cell(_7420) {
+		area: 0.5;
+		pin(A) {direction: input; }
+		pin(B) {direction: input; }
+		pin(C) {direction: input; }
+		pin(D) {direction: input; }
+		pin(Y) {direction: output; function: "(A*B*C*D)'"; }
+	}
+	cell(_744002) {
+		area: 0.5;
+		pin(A) {direction: input; }
+		pin(B) {direction: input; }
+		pin(C) {direction: input; }
+		pin(D) {direction: input; }
+		pin(Y) {direction: output; function: "(A+B+C+D)'"; }
+	}
+	cell(_74266) {
+		area: 0.25;
+		pin(A) {direction: input; }
+		pin(B) {direction: input; }
+		pin(Y) {direction: output;function: "(A^B)'"; }
+	}
+	cell(_74377) {
+		area: 1;
+		pin(D) { direction: input; }
+		pin(nCE) { direction: input; }
+		pin(CLK) { direction: input; }
+		pin(Q) { direction: output; }
+	}
+	cell(_74283) {
+		area: 1;
+		pin(A) {direction: input; }
+		pin(B) {direction: input; }
+		pin(C0) {direction: input; }
+		pin(Sum) {direction: output; }
+		pin(C4) {direction: output; }
+	}
+	cell(_7482) {
+		area: 1;
+		pin(A) {direction: input; }
+		pin(B) {direction: input; }
+		pin(C0) {direction: input; }
+		pin(Sum) {direction: output; }
+		pin(C2) {direction: output; }
+	}
+	cell(_74183) {
+		area: 0.5;
+		pin(A) {direction: input; }
+		pin(B) {direction: input; }
+		pin(C0) {direction: input; }
+		pin(Sum) {direction: output; }
+		pin(C1) {direction: output; }
+	}
+	cell(_74157) {
+		area: 1;
+		pin(A0) {direction: input; }
+		pin(B0) {direction: input; }
+		pin(A1) {direction: input; }
+		pin(B1) {direction: input; }
+		pin(A2) {direction: input; }
+		pin(B2) {direction: input; }
+		pin(A3) {direction: input; }
+		pin(B3) {direction: input; }
+		pin(C0) {direction: input; }
+		pin(S) {direction: input; }
+		pin(Y0) {direction: output; }
+		pin(Y1) {direction: output; }
+		pin(Y2) {direction: output; }
+		pin(Y3) {direction: output; }
+	}
+	cell(_74460) {
+		area: 1;
+		pin(A[0]) {direction: input; }
+		pin(A[1]) {direction: input; }
+		pin(A[2]) {direction: input; }
+		pin(A[3]) {direction: input; }
+		pin(A[4]) {direction: input; }
+		pin(A[5]) {direction: input; }
+		pin(A[6]) {direction: input; }
+		pin(A[7]) {direction: input; }
+		pin(A[8]) {direction: input; }
+		pin(A[9]) {direction: input; }
+		pin(B[0]) {direction: input; }
+		pin(B[1]) {direction: input; }
+		pin(B[2]) {direction: input; }
+		pin(B[3]) {direction: input; }
+		pin(B[4]) {direction: input; }
+		pin(B[5]) {direction: input; }
+		pin(B[6]) {direction: input; }
+		pin(B[7]) {direction: input; }
+		pin(B[8]) {direction: input; }
+		pin(B[9]) {direction: input; }
+		pin(EQ) {direction: output; }
+		pin(NE) {direction: output; }
+	}
+	cell(_74150) {
+		area: 1;
+		pin(E[0]) {direction: input; }
+		pin(E[1]) {direction: input; }
+		pin(E[2]) {direction: input; }
+		pin(E[3]) {direction: input; }
+		pin(E[4]) {direction: input; }
+		pin(E[5]) {direction: input; }
+		pin(E[6]) {direction: input; }
+		pin(E[7]) {direction: input; }
+		pin(E[8]) {direction: input; }
+		pin(E[9]) {direction: input; }
+		pin(E[10]) {direction: input; }
+		pin(E[11]) {direction: input; }
+		pin(E[12]) {direction: input; }
+		pin(E[13]) {direction: input; }
+		pin(E[14]) {direction: input; }
+		pin(E[15]) {direction: input; }
+		pin(A) {direction: input; }
+		pin(B) {direction: input; }
+		pin(C) {direction: input; }
+		pin(D) {direction: input; }
+		pin(W) {direction: output; }
+	}
+}

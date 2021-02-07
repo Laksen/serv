@@ -1,0 +1,47 @@
+read_verilog serv*.v
+
+hierarchy -top serv_rf_top -check
+
+proc
+#opt_const
+opt_clean
+check
+opt
+clean
+flatten; opt
+opt_expr; opt_merge; opt_reduce
+share
+wreduce
+opt
+fsm
+freduce
+share
+opt -fast
+clean
+opt_expr; opt_merge; opt_reduce
+memory -nomap
+techmap -map 74map_jlcpcb.v
+alumacc
+techmap -map 74map_jlcpcb.v
+opt_clean
+
+opt -fast -full
+memory_map
+opt -full
+techmap
+
+opt -fast
+
+proc; opt; fsm; opt; memory; opt
+flatten; opt
+techmap; opt
+
+dfflibmap -liberty 74cells_jlcpcb.lib
+abc -liberty 74cells_jlcpcb.lib
+#abc -liberty 74cells_area.lib
+clean
+
+stat -width -liberty 74cells_jlcpcb.lib
+stat -width -liberty 74cells_area.lib
+
+#write_verilog -noexpr test.v

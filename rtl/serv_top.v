@@ -1,7 +1,7 @@
 `default_nettype none
 
 module serv_top
-  #(parameter WITH_CSR = 1,
+  #(parameter WITH_CSR = 0,
     parameter RESET_STRATEGY = "MINI",
     parameter RESET_PC = 32'd0)
    (

@@ -9,8 +9,8 @@ module serv_rf_top
        "MINI" : Standard setting. Resets the minimal amount of FFs needed to
                  restart execution from the instruction at RESET_PC
      */
-    parameter RESET_STRATEGY = "MINI",
-    parameter WITH_CSR = 1,
+    parameter RESET_STRATEGY = "NONE",
+    parameter WITH_CSR = 0,
     parameter RF_WIDTH = 2,
 	parameter RF_L2D   = $clog2((32+(WITH_CSR*4))*32/RF_WIDTH))
   (
